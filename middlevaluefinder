@@ -1,0 +1,36 @@
+import java.util.Scanner;
+
+public class MiddleValueFinder {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        
+        // Input three integers
+        System.out.print("Enter the first integer: ");
+        int num1 = scanner.nextInt();
+        
+        System.out.print("Enter the second integer: ");
+        int num2 = scanner.nextInt();
+        
+        System.out.print("Enter the third integer: ");
+        int num3 = scanner.nextInt();
+        
+        // Find the middle value
+        int middle = findMiddleValue(num1, num2, num3);
+        
+        // Output the result
+        System.out.println("The middle value is: " + middle);
+        
+        scanner.close();
+    }
+    
+    // Method to find the middle value of three integers
+    public static int findMiddleValue(int a, int b, int c) {
+        if ((a > b && a < c) || (a > c && a < b)) {
+            return a;
+        } else if ((b > a && b < c) || (b > c && b < a)) {
+            return b;
+        } else {
+            return c;
+        }
+    }
+}
